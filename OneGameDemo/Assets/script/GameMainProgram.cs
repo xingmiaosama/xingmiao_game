@@ -5,17 +5,32 @@ using UnityEngine;
 
 public class GameMainProgram : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
-    [SerializeField] private float moveSpeed;
+    private Rigidbody2D rb;
+    private float horizontalInput;
+    [SerializeField] private PlayerData playerData;
     // Start is called before the first frame update
+
     void Start()
     {
-        moveSpeed = 5.0f;
+        rb = GetComponent<Rigidbody2D>();
+        playerData = GetComponent<PlayerData>();
+        rb.gravityScale = playerData.gravityScale;
+
     }
 
     // Update is called once per frame
+
     void Update()
     {
-        
+        horizontalInput = Input.GetAxis("Horizontal");
+        if (Input.GetKeyDown(KeyCode.W)||Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            rb.velocity = new Vector2(rb.velocity.x,playerData.jumpForce);   
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        rb.velocity = new Vector2(horizontalInput * playerData.moveSpeed,rb.velocity.y);
     }
 }
