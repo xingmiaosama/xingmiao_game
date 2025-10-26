@@ -303,7 +303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f324a353c347e4aa0eecea108da618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerData: {fileID: 0}
 --- !u!114 &1513592631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,6 +440,10 @@ PrefabInstance:
     - target: {fileID: 3272427277592814000, guid: 17dda0f740db5724e9571422c13e99f7, type: 3}
       propertyPath: m_Name
       value: obstacle
+      objectReference: {fileID: 0}
+    - target: {fileID: 9153851982691187095, guid: 17dda0f740db5724e9571422c13e99f7, type: 3}
+      propertyPath: m_UseOneWayGrouping
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

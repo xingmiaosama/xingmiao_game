@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -6,9 +7,10 @@ using UnityEngine;
 public class GameMainProgram : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Collider2D playercoll;
     private float horizontalInput;
     private bool isTouchingGround;
-    [SerializeField] private PlayerData playerData;
+    private PlayerData playerData;
     // Start is called before the first frame update
 
     void Start()
@@ -16,7 +18,7 @@ public class GameMainProgram : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerData = GetComponent<PlayerData>();
         rb.gravityScale = playerData.gravityScale;
-        
+        playercoll = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -26,8 +28,9 @@ public class GameMainProgram : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
-            rb.velocity = new Vector2(rb.velocity.x,playerData.jumpForce);   
+            rb.velocity = new Vector2(rb.velocity.x, playerData.jumpForce);
         }
+        
     }
 
     private void FixedUpdate()
@@ -40,7 +43,12 @@ public class GameMainProgram : MonoBehaviour
         {
             rb.velocity = new Vector2(horizontalInput * playerData.moveSpeed, rb.velocity.y);
         }
-        
+
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        //other.collider.enabled = true;
     }
 
     void OnCollisionStay2D(Collision2D other)
@@ -49,14 +57,6 @@ public class GameMainProgram : MonoBehaviour
         if (contact.normal == new Vector2(1f, 0f) || contact.normal == new Vector2(-1f, 0f))
         {
             isTouchingGround = true;
-        }
-        else if (contact.normal == new Vector2(0f, 1f))
-        {
-            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
-            {
-                other.collider.enabled = false;
-            }
-            isTouchingGround = false;
         }
         else
         {
