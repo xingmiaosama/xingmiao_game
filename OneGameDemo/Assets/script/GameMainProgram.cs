@@ -16,7 +16,7 @@ public class GameMainProgram : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         playerData = GetComponent<PlayerData>();
         rb.gravityScale = playerData.gravityScale;
-
+        
     }
 
     // Update is called once per frame
@@ -43,12 +43,20 @@ public class GameMainProgram : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnCollisionStay2D(Collision2D other)
     {
         ContactPoint2D contact = other.contacts[0];
-        if (contact.normal.x > 0.5f || contact.normal.x < -0.5f)
+        if (contact.normal == new Vector2(1f, 0f) || contact.normal == new Vector2(-1f, 0f))
         {
             isTouchingGround = true;
+        }
+        else if (contact.normal == new Vector2(0f, 1f))
+        {
+            if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+            {
+                other.collider.enabled = false;
+            }
+            isTouchingGround = false;
         }
         else
         {
@@ -58,9 +66,6 @@ public class GameMainProgram : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Ground"))
-        {
-            
-        }
+        //other.collider.enabled = true;
     }
 }

@@ -318,12 +318,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 10
-  wallCheckDistance: 0.6
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 0
   canDoubleJump: 0
   gravityScale: 3
+  momentum: 0.1
 --- !u!1001 &1850378124
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -436,6 +433,10 @@ PrefabInstance:
     - target: {fileID: 1897801485225291699, guid: 17dda0f740db5724e9571422c13e99f7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3206171544476541313, guid: 17dda0f740db5724e9571422c13e99f7, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3272427277592814000, guid: 17dda0f740db5724e9571422c13e99f7, type: 3}
       propertyPath: m_Name
