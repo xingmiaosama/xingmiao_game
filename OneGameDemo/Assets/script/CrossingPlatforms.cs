@@ -5,13 +5,13 @@ using UnityEngine;
 public class CrossingPlatforms : MonoBehaviour
 {
     private PlatformEffector2D effector;
-    private ObstacleData obstacleData;
     private bool playerOnPlatform;
+    [SerializeField] private float waitTime;
     // Start is called before the first frame update
     void Start()
     {
         effector = GetComponent<PlatformEffector2D>();
-        obstacleData = GetComponent<ObstacleData>();
+        waitTime = 0.50f;
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class CrossingPlatforms : MonoBehaviour
 
     private System.Collections.IEnumerator ResetEffector()
     {
-        yield return new WaitForSeconds(obstacleData.waitTime);
+        yield return new WaitForSeconds(waitTime);
         effector.rotationalOffset = 0f;
     }
 
