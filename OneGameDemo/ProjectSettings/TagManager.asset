@@ -5,11 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - obstacle
+  - Forge
+  - NPC
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Interactable
   - Water
   - UI
   - 
