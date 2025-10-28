@@ -12,4 +12,9 @@ day2（2025/10/26）：
 
 day3（2025/10/27）：
     在上一版本中用OnCollisionStay2D函数搭配对碰撞器collider.enabled的开关，来实现穿过平台的效果。但是，效果不是很好，于是换成用unity中的自带的遮罩组件（Platform Effector 2D）。
+
+day4（2025/10/28）：
+    完成移动部分之后，开始做玩家与其他物体的交互，这次主要是做了玩家与功能性物品之间的交互。在代码中用Physics2D.OverlapCircleAll();函数来检测玩家为中心半径为interactionRange内的带有ChestInventory脚本的
+    游戏对象，并将其放到数组hitColliders中，再由foreach(){}遍历每个游戏对象，将其中距离玩家最近的对象放到nearbyChest中。只要按下F键的时候就会调用定义的ToggleChest();函数来切换当前nearbyChest的UI的开关。
+    但是，目前并没有做对UI中的东西进行操作的脚本，没有做对打开的UI界面进行挨个关闭的部分。
     
