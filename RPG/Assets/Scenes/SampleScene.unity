@@ -24833,7 +24833,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   attackPoint: {fileID: 633554528}
-  weaponRange: 1.2
+  weaponRange: 0.8
+  stunTime: 0.2
+  knockBackForce: 10
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
@@ -25746,8 +25748,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 360b482c57241784f955a14587881e53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 3
-  maxHealth: 3
+  currentHealth: 100
+  maxHealth: 100
   healthText: {fileID: 910975702}
   healthTextAnimator: {fileID: 910975704}
 --- !u!1 &1867379756
@@ -26464,7 +26466,7 @@ Tilemap:
       - {fileID: -899164929, guid: 2e3432680a190884498fb683b71d6c23, type: 3}
       - {fileID: 677616156, guid: 2e3432680a190884498fb683b71d6c23, type: 3}
       - {fileID: 989177388, guid: 2e3432680a190884498fb683b71d6c23, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -3, y: -6, z: 0}
