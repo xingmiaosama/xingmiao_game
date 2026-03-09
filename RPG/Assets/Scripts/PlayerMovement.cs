@@ -10,11 +10,20 @@ public class PlayerMovement : MonoBehaviour
     public  int  facingDirection = 1;
     public Rigidbody2D rb;
     public Animator anim;
+    public PlayerCombat playerCombat;
     private bool isKnockedBack;
 
     void Start()
     {
         gameObject.GetComponent<SpriteRenderer>().sortingOrder = 10;
+    }
+
+    void Update()
+    {
+        if (Input.GetButtonDown("Slash"))
+        {
+            playerCombat.Attack();
+        }
     }
 
     void FixedUpdate()

@@ -25563,6 +25563,7 @@ GameObject:
   - component: {fileID: 1838637370}
   - component: {fileID: 1838637375}
   - component: {fileID: 1838637376}
+  - component: {fileID: 1838637377}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -25586,6 +25587,7 @@ MonoBehaviour:
   facingDirection: 1
   rb: {fileID: 1838637371}
   anim: {fileID: 1838637375}
+  playerCombat: {fileID: 1838637377}
 --- !u!50 &1838637371
 Rigidbody2D:
   serializedVersion: 4
@@ -25752,6 +25754,19 @@ MonoBehaviour:
   maxHealth: 100
   healthText: {fileID: 910975702}
   healthTextAnimator: {fileID: 910975704}
+--- !u!114 &1838637377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838637369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 199d30bf13b577d48be6c393ca0dda49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1838637375}
 --- !u!1 &1867379756
 GameObject:
   m_ObjectHideFlags: 0
@@ -26211,7 +26226,7 @@ Tilemap:
       - {fileID: 737395359, guid: 2e3432680a190884498fb683b71d6c23, type: 3}
       - {fileID: 1676950589, guid: 2e3432680a190884498fb683b71d6c23, type: 3}
       - {fileID: -104846798, guid: 2e3432680a190884498fb683b71d6c23, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -10, y: -7, z: 0}
