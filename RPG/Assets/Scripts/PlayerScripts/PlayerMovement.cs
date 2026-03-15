@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed = 5.0f;
-    public  int  facingDirection = 1;
     public Rigidbody2D rb;
     public Animator anim;
     public PlayerCombat playerCombat;
@@ -33,8 +31,8 @@ public class PlayerMovement : MonoBehaviour
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
 
-            if (horizontal > 0 && facingDirection < 0 || 
-                horizontal < 0 && facingDirection > 0)
+            if (horizontal > 0 && PlayerStatsManager.Instance.facingDirection < 0 || 
+                horizontal < 0 && PlayerStatsManager.Instance.facingDirection > 0)
             {
                 Flip();
             }
@@ -42,13 +40,13 @@ public class PlayerMovement : MonoBehaviour
             anim.SetFloat("horizontal", Math.Abs(horizontal));
             anim.SetFloat("vertical", Math.Abs(vertical));
 
-            rb.velocity = new Vector2(horizontal,vertical) * speed;
+            rb.velocity = new Vector2(horizontal,vertical) * PlayerStatsManager.Instance.speed;
         }
     }
 
     void Flip()
     {
-        facingDirection *= -1;
+        PlayerStatsManager.Instance.facingDirection *= -1;
         transform.localScale = new Vector3(transform.localScale.x * -1,transform.localScale.y,transform.localScale.z);
     }
 
