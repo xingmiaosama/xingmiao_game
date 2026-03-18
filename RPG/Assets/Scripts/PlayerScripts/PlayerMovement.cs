@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-        gameObject.GetComponent<SpriteRenderer>().sortingOrder = 10;
+        gameObject.GetComponent<SpriteRenderer>().sortingOrder = 5;
     }
 
     void Update()
