@@ -141,7 +141,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7577eda0c4006d446830fd8c051cda78, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8f188da95d5e8ff40a4c5c416f155e12, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 3807919610036051484}
   - component: {fileID: 989310470689673139}
   - component: {fileID: 6751684866086074761}
+  - component: {fileID: -2374661548443490933}
   m_Layer: 0
   m_Name: SkillsButton
   m_TagString: Untagged
@@ -273,6 +274,24 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-2374661548443490933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5581153904015842892}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3349134e2f2f7224fa52aac36cc71620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skillSO: {fileID: 0}
+  currentLevel: 0
+  isUnLocked: 0
+  skillLevelText: {fileID: 8110047535985685695}
+  skillIcon: {fileID: 7411526514296974045}
+  skillButton: {fileID: 6751684866086074761}
 --- !u!1 &9178418645805074557
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,8 +384,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
