@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdd8f28eb50f4f44cbf75a52e571b873, type: 3}
   m_Name: MaxHealthBoost
   m_EditorClassIdentifier: 
-  skillName: 
-  maxLevel: 0
-  skillIcon: {fileID: 0}
+  skillName: Max Health Boost
+  maxLevel: 5
+  skillIcon: {fileID: 21300000, guid: b246baec8ed17a749a22b1c5a3ee6269, type: 3}
