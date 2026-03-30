@@ -4,6 +4,7 @@ using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class SkillSlot : MonoBehaviour
 {
@@ -13,6 +14,10 @@ public class SkillSlot : MonoBehaviour
     public TMP_Text skillLevelText;
     public UnityEngine.UI.Image skillIcon;
     public Button skillButton;
+    public List<SkillSlot> prerequisiteSlots;
+
+    public static event Action<SkillSlot> OnAbilityPointSpent;
+    public static event Action<SkillSlot> OnSkillMaxed;
 
     private void OnValidate()
     {
@@ -44,8 +49,32 @@ public class SkillSlot : MonoBehaviour
     {
         if (isUnLocked && currentLevel < skillSO.maxLevel)
         {
+            OnAbilityPointSpent?.Invoke(this);
             currentLevel++;
+            if (currentLevel >= skillSO.maxLevel)
+            {
+                OnSkillMaxed?.Invoke(this);
+            }
             UpdateUI();
         }
     }
+
+    public bool CanUnlockSkill()
+    {
+        foreach (SkillSlot slot in prerequisiteSlots)
+        {
+            if (! slot.isUnLocked || slot.currentLevel < slot.skillSO.maxLevel)
+            {
+                return false;
+            } 
+        }
+        return true;
+    }
+
+    public void Unlock()
+    {
+        isUnLocked = true;
+        UpdateUI();
+    }
+
 }

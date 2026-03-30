@@ -25784,6 +25784,7 @@ GameObject:
   - component: {fileID: 1046047039}
   - component: {fileID: 1046047038}
   - component: {fileID: 1046047041}
+  - component: {fileID: 1046047042}
   m_Layer: 0
   m_Name: SkillsCanvas
   m_TagString: Untagged
@@ -25913,6 +25914,18 @@ MonoBehaviour:
   - {fileID: 1809288553}
   skillpointsText: {fileID: 249751938}
   avaliableSkillPoints: 0
+--- !u!225 &1046047042
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1046047036}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1069082456
 GameObject:
   m_ObjectHideFlags: 0
@@ -30710,7 +30723,7 @@ Tilemap:
       - {fileID: -899164929, guid: 2e3432680a190884498fb683b71d6c23, type: 3}
       - {fileID: 677616156, guid: 2e3432680a190884498fb683b71d6c23, type: 3}
       - {fileID: 989177388, guid: 2e3432680a190884498fb683b71d6c23, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -9, y: -7, z: 0}
@@ -30725,7 +30738,7 @@ Tilemap:
       - {fileID: -164196592, guid: 2e3432680a190884498fb683b71d6c23, type: 3}
       - {fileID: -5482364, guid: 2e3432680a190884498fb683b71d6c23, type: 3}
       - {fileID: 1301721873, guid: 2e3432680a190884498fb683b71d6c23, type: 3}
-      m_AnimationSpeed: 5.0000005
+      m_AnimationSpeed: 5
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -8, y: -7, z: 0}
