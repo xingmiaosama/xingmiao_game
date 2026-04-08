@@ -16,7 +16,7 @@ public class StatsUI : MonoBehaviour
     }
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetButtonDown("ToggleStats"))
             if(statsOpen)
             {
                 Time.timeScale = 1;

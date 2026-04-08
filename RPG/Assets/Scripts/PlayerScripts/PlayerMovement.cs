@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Slash"))
+        if (Input.GetButtonDown("Slash") && playerCombat.enabled)
         {
             playerCombat.Attack();
         }
