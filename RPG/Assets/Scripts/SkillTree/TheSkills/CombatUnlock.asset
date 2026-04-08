@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cdd8f28eb50f4f44cbf75a52e571b873, type: 3}
-  m_Name: MaxHealthBoost
+  m_Name: CombatUnlock
   m_EditorClassIdentifier: 
-  skillName: Max Health Boost
-  maxLevel: 5
-  skillIcon: {fileID: 21300000, guid: b246baec8ed17a749a22b1c5a3ee6269, type: 3}
+  skillName: Sword Slash
+  maxLevel: 1
+  skillIcon: {fileID: 21300000, guid: 5cdd5f872db2fb844976529f9483ded1, type: 3}
