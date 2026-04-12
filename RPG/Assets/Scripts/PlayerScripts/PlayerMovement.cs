@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Animator anim;
     public PlayerCombat playerCombat;
     private bool isKnockedBack;
+    public bool isShooting;
 
     void Start()
     {
@@ -26,7 +27,11 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!isKnockedBack)
+        if (isShooting)
+        {
+            rb.velocity = Vector2.zero;
+        }
+        else if (!isKnockedBack)
         {
             float horizontal = Input.GetAxis("Horizontal");
             float vertical = Input.GetAxis("Vertical");
