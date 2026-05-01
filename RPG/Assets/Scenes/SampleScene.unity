@@ -2182,7 +2182,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -600, y: -150}
+  m_AnchoredPosition: {x: -364, y: -113}
   m_SizeDelta: {x: 786.3479, y: 193.481}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &444896401
@@ -29316,15 +29316,15 @@ PrefabInstance:
     - target: {fileID: 5263787288129301609, guid: 13f8cb047988deb4d9653f0373787d1a, type: 3}
       propertyPath: itemSO
       value: 
-      objectReference: {fileID: 11400000, guid: e4e54ef1076b33e488dad0a5d2c186bf, type: 2}
+      objectReference: {fileID: 11400000, guid: 40f656b35f1c311438d8d7dbedb519e0, type: 2}
     - target: {fileID: 5407615288115436516, guid: 13f8cb047988deb4d9653f0373787d1a, type: 3}
       propertyPath: m_Name
-      value: LootPrefabs
+      value: Gold
       objectReference: {fileID: 0}
     - target: {fileID: 6329639385807305814, guid: 13f8cb047988deb4d9653f0373787d1a, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1540f7807b2cdad40a5d3307feeb1b00, type: 3}
+      objectReference: {fileID: 21300000, guid: 235a34e9c7bedb140a506153370ad238, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
