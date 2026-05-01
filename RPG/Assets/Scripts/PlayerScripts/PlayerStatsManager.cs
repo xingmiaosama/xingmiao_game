@@ -7,6 +7,7 @@ public class PlayerStatsManager : MonoBehaviour
 {
     public static PlayerStatsManager Instance;
     public TMP_Text healthText;
+    public StatsUI statsUI;
 
     [Header("Movement")]
     public float speed;
@@ -40,5 +41,17 @@ public class PlayerStatsManager : MonoBehaviour
     {
         maxHealth += amount;
         healthText.text = "HP: " + currentHealth + "/" + maxHealth;
+    }
+
+    public void UpdateHealth(int amount)
+    {
+        currentHealth += amount;
+        healthText.text = "HP: " + currentHealth + "/" + maxHealth;
+    }
+
+    public void UpdateSpeed(int amount)
+    {
+        speed += amount;
+        statsUI.UpdateAllStats();
     }
 }
