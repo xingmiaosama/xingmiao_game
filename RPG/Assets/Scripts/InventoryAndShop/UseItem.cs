@@ -8,17 +8,17 @@ public class UseItem : MonoBehaviour
     {
         if(itemSO.currentHealth > 0)
         {
-            PlayerStatsManager.Instance.UpdateHealth(-itemSO.currentHealth);
+            PlayerStatsManager.Instance.UpdateHealth(+itemSO.currentHealth);
         }
 
         if(itemSO.maxHealth > 0)
         {
-            PlayerStatsManager.Instance.UpdateMaxHealth(-itemSO.maxHealth);
+            PlayerStatsManager.Instance.UpdateMaxHealth(+itemSO.maxHealth);
         }
 
         if(itemSO.speed > 0)
         {
-            PlayerStatsManager.Instance.UpdateSpeed(-itemSO.speed);
+            PlayerStatsManager.Instance.UpdateSpeed(+itemSO.speed);
         }
         
         if (itemSO.duration > 0)

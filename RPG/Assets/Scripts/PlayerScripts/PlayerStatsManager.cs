@@ -46,6 +46,14 @@ public class PlayerStatsManager : MonoBehaviour
     public void UpdateHealth(int amount)
     {
         currentHealth += amount;
+        if(currentHealth >= maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        else if(currentHealth <= 0)
+        {
+            currentHealth = 0;
+        }
         healthText.text = "HP: " + currentHealth + "/" + maxHealth;
     }
 

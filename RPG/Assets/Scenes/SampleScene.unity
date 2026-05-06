@@ -2719,6 +2719,7 @@ GameObject:
   - component: {fileID: 633964016}
   - component: {fileID: 633964015}
   - component: {fileID: 633964019}
+  - component: {fileID: 633964020}
   m_Layer: 5
   m_Name: InventoryCanvas
   m_TagString: Untagged
@@ -2787,7 +2788,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_TargetDisplay: 0
 --- !u!224 &633964018
 RectTransform:
@@ -2822,12 +2823,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89d6518256e780f4b8136f9f9e5dcbb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useItem: {fileID: 633964020}
   itemSlots:
   - {fileID: 2499357564887336112}
   - {fileID: 1277769410}
   - {fileID: 2107591049}
   gold: 0
   goldText: {fileID: 1828303491}
+--- !u!114 &633964020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633964014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17da4f52b142224438da17133939b24f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &673027231
 GameObject:
   m_ObjectHideFlags: 0
@@ -24798,6 +24812,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventorySlots (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8363789136744490885, guid: a4c9054bc48a5ac4b83163c6c5d1c87d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 817e1c3954e960c42968c5ee96d2ee67, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27389,6 +27407,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventorySlots (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8363789136744490885, guid: a4c9054bc48a5ac4b83163c6c5d1c87d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 817e1c3954e960c42968c5ee96d2ee67, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31477,7 +31499,7 @@ Tilemap:
       - {fileID: -899164929, guid: 2e3432680a190884498fb683b71d6c23, type: 3}
       - {fileID: 677616156, guid: 2e3432680a190884498fb683b71d6c23, type: 3}
       - {fileID: 989177388, guid: 2e3432680a190884498fb683b71d6c23, type: 3}
-      m_AnimationSpeed: 5
+      m_AnimationSpeed: 5.0000005
       m_AnimationTimeOffset: 0
       m_Flags: 0
   - first: {x: -7, y: -7, z: 0}
@@ -32881,6 +32903,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: InventorySlots
       objectReference: {fileID: 0}
+    - target: {fileID: 8363789136744490885, guid: a4c9054bc48a5ac4b83163c6c5d1c87d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 817e1c3954e960c42968c5ee96d2ee67, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
