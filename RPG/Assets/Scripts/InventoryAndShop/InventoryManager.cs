@@ -36,19 +36,36 @@ public class InventoryManager : MonoBehaviour
             goldText.text = gold.ToString();
             return;
         }
-        else
+
+        foreach(var slot in itemSlots)
         {
-            foreach(InventorySlot slot in itemSlots)
+            if(slot.itemSO == itemSO && slot.quantity < itemSO.stackSize)
             {
-                if(slot.itemSO == null)
+                int availableSpace = itemSO.stackSize - slot.quantity;
+                int amountToAdd = Mathf.Min(availableSpace,quantity);
+
+                slot.quantity += amountToAdd;
+                quantity -= amountToAdd;
+
+                slot.UpdateUI();
+
+                if(quantity <= 0)
                 {
-                    slot.itemSO = itemSO;
-                    slot.quantity = quantity;
-                    slot.UpdateUI();
                     return;
                 }
             }
-            
+        }
+
+        foreach(InventorySlot slot in itemSlots)
+        {
+            if(slot.itemSO == null)
+            {
+                int amountToAdd = Mathf.Min(itemSO.stackSize,quantity);
+                slot.itemSO = itemSO;
+                slot.quantity = quantity;
+                slot.UpdateUI();
+                return;
+            }
         }
     }
 
