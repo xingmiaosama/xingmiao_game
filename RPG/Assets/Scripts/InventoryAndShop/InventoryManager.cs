@@ -6,6 +6,8 @@ using TMPro;
 public class InventoryManager : MonoBehaviour
 {
     public UseItem useItem;
+    public GameObject lootPrefab;
+    public Transform player;
     public InventorySlot[] itemSlots;
     public int gold;
     public TMP_Text goldText;
@@ -62,11 +64,37 @@ public class InventoryManager : MonoBehaviour
             {
                 int amountToAdd = Mathf.Min(itemSO.stackSize,quantity);
                 slot.itemSO = itemSO;
-                slot.quantity = quantity;
+                slot.quantity += amountToAdd;
+                quantity -= amountToAdd;
                 slot.UpdateUI();
-                return;
+                if(quantity <= 0)
+                {
+                    return;
+                }
             }
         }
+
+        if(quantity > 0)
+        {
+            DropLoot(itemSO,quantity);
+        }
+    }
+
+    public void DropItem(InventorySlot slot)
+    {
+        DropLoot(slot.itemSO,1);
+        slot.quantity--;
+        if(slot.quantity <= 0)
+        {
+            slot.itemSO = null;
+        }
+        slot.UpdateUI();
+    }
+
+    private void DropLoot(ItemSO itemSO,int quantity)
+    {
+           Loot loot = Instantiate(lootPrefab,player.position,Quaternion.identity).GetComponent<Loot>();
+           loot.Initialize(itemSO,quantity);
     }
 
     public void UseItem(InventorySlot slot)
