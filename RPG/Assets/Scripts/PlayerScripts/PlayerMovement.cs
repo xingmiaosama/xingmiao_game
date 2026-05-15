@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         gameObject.GetComponent<SpriteRenderer>().sortingOrder = 5;
+        isShooting = false;
     }
 
     void Update()

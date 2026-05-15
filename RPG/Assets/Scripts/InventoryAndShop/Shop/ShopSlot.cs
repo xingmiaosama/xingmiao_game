@@ -12,6 +12,8 @@ public class ShopSlot : MonoBehaviour
     public TMP_Text priceText;
     public Image itemImage;
 
+    [SerializeField] private ShopManager shopManager;
+
     public int price;
 
     public void Initialize(ItemSO itemSO,int price)
@@ -21,5 +23,10 @@ public class ShopSlot : MonoBehaviour
         itemImage.sprite = itemSO.icon;
         itemNameText.text = itemSO.itemName;
         priceText.text = price.ToString();
+    }
+
+    public void OnBuyButtonClicked()
+    {
+        shopManager.TryBuyItem(itemSO,price);
     }
 }

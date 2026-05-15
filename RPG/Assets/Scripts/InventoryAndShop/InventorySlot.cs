@@ -14,6 +14,7 @@ public class InventorySlot : MonoBehaviour,IPointerClickHandler
     public UnityEngine.UI.Image itemImage;
     public TMP_Text quantityText;
     private InventoryManager inventoryManager;
+    private  static ShopManager activeShop;
 
     private void Start()
     {
