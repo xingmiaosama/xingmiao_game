@@ -21,17 +21,44 @@ public class InventorySlot : MonoBehaviour,IPointerClickHandler
         inventoryManager = GetComponentInParent<InventoryManager>();
     }
 
+
+
+    private void OnEnable()
+    {
+        ShopManager.OnShopStateChanged += HandleShopStateChanged;
+    }
+
+    private void OnDisable()
+    {
+        ShopManager.OnShopStateChanged -= HandleShopStateChanged;
+    }
+
+
+    private void HandleShopStateChanged(ShopManager shopManager,bool isOpen)
+    {
+        activeShop = isOpen ? shopManager : null;
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         if(quantity > 0)
         {
             if(eventData.button == PointerEventData.InputButton.Left)
             {
-                if(itemSO.currentHealth > 0 && PlayerStatsManager.Instance.currentHealth >= PlayerStatsManager.Instance.maxHealth)
+                if(activeShop != null)
                 {
-                    return;
+                    activeShop.SellItem(itemSO);
+                    quantity--;
+                    UpdateUI();
                 }
-                inventoryManager.UseItem(this);
+                else
+                {
+                    if(itemSO.currentHealth > 0 && PlayerStatsManager.Instance.currentHealth >= PlayerStatsManager.Instance.maxHealth)
+                    {
+                        return;
+                    }
+                    inventoryManager.UseItem(this);
+                }
             }
             else if(eventData.button == PointerEventData.InputButton.Right)
             {
@@ -42,6 +69,11 @@ public class InventorySlot : MonoBehaviour,IPointerClickHandler
 
     public void UpdateUI()
     {
+        if(quantity <= 0)
+        {
+            itemSO = null;
+        }
+
         if (itemSO != null)
         {
             itemImage.sprite = itemSO.icon;
