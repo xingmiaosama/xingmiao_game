@@ -15,7 +15,7 @@ public class ItemSO : ScriptableObject
     public int currentHealth;
     public int maxHealth;
     public int speed;
-    public int damge;
+    public int damage;
 
     [Header("For TemPorary Items")]
     public float duration;
