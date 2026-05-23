@@ -483,6 +483,7 @@ GameObject:
   - component: {fileID: 165571575}
   - component: {fileID: 165571576}
   - component: {fileID: 165571577}
+  - component: {fileID: 165571578}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -575,7 +576,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 165571573}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d64ebec7c2bce5e4386ebf56306935b4, type: 3}
   m_Name: 
@@ -586,6 +587,26 @@ MonoBehaviour:
   - {x: 10.6, y: 2.6}
   speed: 2
   pauseDuration: 1.5
+  anim: {fileID: 499172862}
+--- !u!114 &165571578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 165571573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b25a8ed15de4cec41b5a6e6accf38e6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wanderWidth: 8
+  wanderHeight: 5
+  startingPosition: {x: 10, y: 2.4}
+  pauseDuration: 1.5
+  speed: 2
+  target: {x: 20, y: 4}
+  anim: {fileID: 499172862}
 --- !u!1001 &248390205
 PrefabInstance:
   m_ObjectHideFlags: 0
