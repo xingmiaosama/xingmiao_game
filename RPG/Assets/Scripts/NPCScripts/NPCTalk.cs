@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class NPCTalk : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public Rigidbody2D rb;
+    public Animator anim;
+    public Animator interactAnim;
+
+    private void OnEnable()
     {
-        
+        rb.velocity = Vector2.zero;
+        anim.Play("Idle");
+        interactAnim.Play("Open");
+        rb.isKinematic = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDisable()
     {
-        
+        interactAnim.Play("Close");
+        rb.isKinematic = false;
     }
 }
