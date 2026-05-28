@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Night Renner
   m_EditorClassIdentifier: 
   actorName: Night Renner
-  portrait: {fileID: 1513269292, guid: 5f4f577baba08894cbd12c5af2f5acf8, type: 3}
+  portrait: {fileID: 362219586, guid: 09c505ced5bd0464d8963c39fc81e7e1, type: 3}
