@@ -13,6 +13,7 @@ public class DialogueManager : MonoBehaviour
     public Image portrait;
     public TMP_Text actorName;
     public TMP_Text dialogueText;
+    public Button[] choiceButtons;
 
 
     public bool isDialogueActive;
@@ -36,6 +37,11 @@ public class DialogueManager : MonoBehaviour
         canvasGroup.alpha = 0;
         canvasGroup.interactable = false;
         canvasGroup.blocksRaycasts = false;
+
+        foreach(var button in choiceButtons)
+        {
+            button.gameObject.SetActive(false);
+        }
     }
     
 
@@ -57,7 +63,7 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            EndDialogue();
+            ShowChoices();
         }
     }
 
@@ -76,6 +82,28 @@ public class DialogueManager : MonoBehaviour
 
         dialogueIndex++;
     }
+
+
+    private void ShowChoices()
+    {
+        if(currentDialogue.options.Length > 0)
+        {
+            for(int i = 0;i < currentDialogue.options.Length; i++)
+            {
+                var option = currentDialogue.options[i];
+
+                choiceButtons[i].GetComponentInChildren<TMP_Text>().text = option.optionText;
+                choiceButtons[i].gameObject.SetActive(true);
+            }
+        }
+        else
+        {
+            EndDialogue();
+        }
+    }
+
+
+
 
     private void EndDialogue()
     {

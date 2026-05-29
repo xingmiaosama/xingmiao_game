@@ -10,15 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6de071fd49738348aa34d4b02b22933, type: 3}
-  m_Name: Greeting With Bob
+  m_Name: Greeting With Bob Not Interested
   m_EditorClassIdentifier: 
   lines:
   - speaker: {fileID: 11400000, guid: 4dca4fca1cfc78f4aaeef44b1178c295, type: 2}
-    text: "\u725B\u903C"
+    text: "\u55B5\u55B5\u55B5\u55B5\u55B5\u55B5\u55B5\u55B5\u55B5\u55B5\u55B5\u55B5\u545C~"
   - speaker: {fileID: 11400000, guid: 0f6787fc29831da4094428199cdff2ca, type: 2}
-    text: 666
-  options:
-  - optionText: Tell me more
-    nextDialogue: {fileID: 11400000, guid: f7b695336ed6675468032eb75ae03ef9, type: 2}
-  - optionText: Not Interested
-    nextDialogue: {fileID: 11400000, guid: 21b85a1a40637dd4280622c5f9328b2d, type: 2}
+    text: "\u55B5\uFF1F"
+  options: []
